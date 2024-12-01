@@ -1,11 +1,8 @@
 const express = require('express');
-const PaymentRouter = express.Router();
-const vnpayController = require('../payment/vnpay'); // Import các hàm xử lý thanh toán
+const router = express.Router();
+const PaymentController = require('../controllers/PaymentController');
 
-// Route xử lý tạo URL thanh toán
-PaymentRouter.post('/create_payment_url', vnpayController.createPaymentUrl);
+router.post('/create_payment_url', PaymentController.createPaymentUrl);
+router.get('/vnpay_return', PaymentController.vnpayReturn);
 
-// Route xử lý kết quả trả về sau thanh toán
-PaymentRouter.get('/vnpay_return', vnpayController.vnpayReturn);
-
-module.exports = PaymentRouter;
+module.exports = router;

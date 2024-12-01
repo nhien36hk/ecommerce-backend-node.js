@@ -9,5 +9,7 @@ router.post('/create',authUserMiddleWare, OrderController.createOrder);
 
 router.get('/get-order-details/:id',authUserMiddleWare, OrderController.getDetailsOrder);
 
+router.get('/get-my-orders/:id', OrderController.getMyOrders);
+
 
 module.exports = router;
