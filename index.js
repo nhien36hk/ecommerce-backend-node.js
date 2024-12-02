@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 // Cấu hình CORS chi tiết hơn
 app.use(cors({
-    origin: 'http://localhost:3000', // URL của frontend React
+    origin: 'https://ecommerce-frontend-react-omega.vercel.app/', // URL của frontend React
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'token'],
     credentials: true,
