@@ -7,7 +7,7 @@ const OrderRouter = require('./OrderRouter');
 
 const routes = (app) => {
     app.use(cors({
-        origin: 'https://ecommerce-frontend-react-omega.vercel.app/',
+        origin: 'https://ecommerce-frontend-react-omega.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization', 'token'],
         credentials: true,
