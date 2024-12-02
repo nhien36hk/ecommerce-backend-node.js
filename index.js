@@ -27,7 +27,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 // Routes
 routes(app);
 
-mongoose.connect('mongodb://127.0.0.1:27017/ecom_db')
+mongoose.connect('mongodb+srv://root:root@cluster0.emjze.mongodb.net/ecom_db?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('MongoDB connection error:', err));
 
