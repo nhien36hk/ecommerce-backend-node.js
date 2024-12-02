@@ -61,10 +61,10 @@ const loginUser = async (req,res) => {
         res.cookie('refresh_token', refresh_token, {
             httpOnly: true,
             secure: false,
-            samesite: 'strict'
-
+            samesite: 'strict',
+            path: '/',
         })
-        return res.status(200).json(newResponse);
+        return res.status(200).json({...newResponse, refresh_token});
     } catch (error) {
         return res.status(500).json({
             message : "Lỗi kết nối"
@@ -147,7 +147,7 @@ const getDetailsUser = async (req,res) => {
 
 const refreshToken = async (req,res) => {
     try {
-        const token = req.cookies.refresh_token;
+        let token = req.header.token.split(' ')[1];
         if(!token) {
             return res.status(404).json({
                 status: "error",

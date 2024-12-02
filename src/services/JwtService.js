@@ -20,7 +20,7 @@ const genneralRefreshToken = async (payload) => {
     return refresh_token;
 }
 
-const refreshTokenJwtService = (token) => {
+const   refreshTokenJwtService = (token) => {
     return new Promise((resolve,reject) => {
         try {
             jwt.verify(token,process.env.REFRESH_TOKEN_SECRET, async (err,user) => {
